@@ -64,7 +64,7 @@ phimart/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/yourusername/phimart.git
+git clone https://github.com/fardin-o5/Phimart.git
 cd phimart
 ```
 ### 2️⃣ Create Virtual env
