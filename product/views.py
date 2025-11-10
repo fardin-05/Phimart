@@ -32,6 +32,9 @@ class ProductViewSet(ModelViewSet):
     search_fields = ['name','description','category__name']
     ordering_fields = ['price', 'created_at'] 
     permission_classes = [IsAdminReadOnly]
+
+    def get_queryset(self):
+        return Product.objects.prefetch_related('images').all()
     @swagger_auto_schema(
             operation_summary='Retrive a list of products'
     )
