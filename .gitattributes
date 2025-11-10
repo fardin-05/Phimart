@@ -1,0 +1,3 @@
+*.html linguist-language=Python
+*.js   linguist-vendored
+*.css  linguist-vendored
