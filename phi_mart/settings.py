@@ -117,9 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #configuration for cloudinary storage
 cloudinary.config( 
-    cloud_name = config('cloud_name'), 
-    api_key = config('cloudinary_api_key'), 
-    api_secret = config('cloudinary_api_secret_key'), # Click 'View API Keys' above to copy your API secret
+    cloud_name = config('CLOUD_NAME'), 
+    api_key = config('CLOUDINARY_API_KEY'), 
+    api_secret = config('CLOUDINARY_API_SECRET_KEY'), # Click 'View API Keys' above to copy your API secret
     secure=True
 )
 
