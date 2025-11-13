@@ -38,12 +38,11 @@ INSTALLED_APPS = [
     'users',
     'product',
     'order',
-    'debug_toolbar',
    
 ]
 
 MIDDLEWARE = [
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    #"debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -197,7 +196,3 @@ SWAGGER_SETTINGS = {
 }
 
 
-
-if not DEBUG:
-    INSTALLED_APPS.remove('debug_toolbar')
-    MIDDLEWARE.remove("debug_toolbar.middleware.DebugToolbarMiddleware")
