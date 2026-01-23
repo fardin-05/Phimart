@@ -2,12 +2,18 @@
     "builds": [{
       "src": "phi_mart/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.3" }
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
     }],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "phi_mart/wsgi.py"
+        "dest": "phi_mart/wsgi.py",
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE,OPTIONS",
+          "Access-Control-Allow-Headers": "X-CSRFToken, Authorization, Content-Type",
+          "Access-Control-Allow-Credentials": "true"
+        }
       }
     ]
 }
