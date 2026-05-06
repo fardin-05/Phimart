@@ -3,6 +3,8 @@ from django.conf import settings
 from django.core.validators import MaxValueValidator,MinValueValidator
 from .validators import validate_file_size
 from cloudinary.models import CloudinaryField
+
+#======Catregory Model========
 class Category(models.Model):
     name=models.CharField(max_length=100)
     description=models.TextField(blank=True, null=True)
@@ -10,6 +12,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+#===========Product Model===========
 class Product(models.Model):
     name=models.CharField(max_length=200)
     description=models.TextField()
@@ -23,13 +26,16 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
+#==========Product Image===========
 class ProductImage(models.Model):
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name='images')
     image = CloudinaryField('image')
 
 
+#============Review=============
 class Review (models.Model):
     product = models.ForeignKey(Product, on_delete = models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
